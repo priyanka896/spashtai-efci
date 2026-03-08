@@ -246,8 +246,6 @@ spashtai-efci/
 │   └── reason_graph_builder.py  # Clinical reasoning
 ├── governance/
 │   └── audit_logger.py      # CloudWatch logging
-├── data/
-│   └── medical_glossary.json # NIH/WHO/CDC sources
 ├── requirements.txt
 ├── README.md
 ├── ARCHITECTURE.md

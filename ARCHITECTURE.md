@@ -267,11 +267,12 @@ Return ONLY valid JSON.
 
 **Purpose:** Ground explanations in trusted medical sources
 
-**Technology:** Amazon DynamoDB + Semantic Search
+**Technology:** Amazon DynamoDB + Dynamic Web Retrieval
 
-**Data Source:** `data/medical_glossary.json`
-- 500+ medical terms
-- NIH, WHO, CDC definitions
+**Data Source:** Real-time web scraping from trusted medical sources
+- NIH, WHO, CDC, Mayo Clinic, Cleveland Clinic
+- Dynamic extraction using AWS Bedrock
+- DynamoDB caching for performance
 - Pre-curated for Indian context
 
 **Retrieval Strategy:**
