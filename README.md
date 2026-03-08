@@ -198,12 +198,8 @@ aws s3 mb s3://your-bucket-name --region us-east-1
 aws logs create-log-group --log-group-name /spashtai/efci/audit --region us-east-1
 ```
 
-### 5. Load Medical Glossary
-```bash
-python -c "from retrieval.medical_rag import MedicalRAG; MedicalRAG().load_glossary_to_dynamodb('data/medical_glossary.json')"
-```
 
-### 6. Run Application
+### 5. Run Application
 ```bash
 streamlit run app/main.py
 ```
