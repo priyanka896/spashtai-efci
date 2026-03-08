@@ -917,18 +917,13 @@ def render_chat(result: dict, is_doctor: bool = False):
     # Input row
     placeholder = "Ask a clinical question..." if is_doctor else "Ask something about your results..."
     
-    # Initialize input value in session state if not exists
-    if "chat_input_value" not in st.session_state:
-        st.session_state.chat_input_value = ""
-    
     col_in, col_btn = st.columns([5, 1])
     with col_in:
         user_input = st.text_input(
             label="q",
             placeholder=placeholder,
             label_visibility="collapsed",
-            key="chat_input",
-            value=st.session_state.chat_input_value
+            key="chat_input"
         )
     with col_btn:
         ask_clicked = st.button("Ask", key="ask_btn", use_container_width=True)
@@ -952,8 +947,9 @@ def render_chat(result: dict, is_doctor: bool = False):
             "content": response["answer"],
             "safety_note": response.get("safety_note", "")
         })
-        # Clear the input field after submission
-        st.session_state.chat_input_value = ""
+        # Clear the input field by deleting the key from session state
+        if "chat_input" in st.session_state:
+            del st.session_state["chat_input"]
         st.experimental_rerun()
 
 # ─────────────────────────────────────────────────────────────
