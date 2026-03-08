@@ -2,7 +2,7 @@
 
 **Making clinical reports understandable for 700 million Indians**
 
-[![AWS AI for Bharat Hackathon](https://img.shields.io/badge/AWS-AI%20for%20Bharat%202025-orange)](https://aws.amazon.com)
+[![AWS AI for Bharat Hackathon](https://img.shields.io/badge/AWS-AI%20for%20Bharat%20-orange)](https://aws.amazon.com)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-green)](http://54.204.137.70:8501/)
 [![Video Demo](https://img.shields.io/badge/Video-Demo-red)](https://youtu.be/sTgoSQuRjfs)
 
@@ -223,7 +223,7 @@ The app will be available at `http://localhost:8501`
 
 **Team Size:** 2 Developers
 
-Built for the **AWS AI for Bharat Hackathon 2025**
+Built for the **AWS AI for Bharat Hackathon**
 
 ---
 
@@ -277,7 +277,7 @@ This application:
 
 ## 📄 License
 
-This project is submitted for the AWS AI for Bharat Hackathon 2025.
+This project is submitted for the AWS AI for Bharat Hackathon.
 
 ---
 
