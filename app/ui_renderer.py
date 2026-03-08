@@ -914,43 +914,40 @@ def render_chat(result: dict, is_doctor: bool = False):
             if note:
                 _html(f"<div style='font-size:11px; color:{_neu}; margin:2px 0 10px 8px;'>Note: {note}</div>")
 
-    # Input row
+    # Input row - using form to auto-clear on submit
     placeholder = "Ask a clinical question..." if is_doctor else "Ask something about your results..."
     
-    col_in, col_btn = st.columns([5, 1])
-    with col_in:
-        user_input = st.text_input(
-            label="q",
-            placeholder=placeholder,
-            label_visibility="collapsed",
-            key="chat_input"
-        )
-    with col_btn:
-        ask_clicked = st.button("Ask", key="ask_btn", use_container_width=True)
-
-    # Process only when Ask button is clicked
-    if ask_clicked and user_input and user_input.strip():
-        question = user_input.strip()
-        st.session_state.chat_history.append({"role": "user", "content": question})
-        history_for_engine = [
-            {"role": t["role"], "content": t["content"]}
-            for t in st.session_state.chat_history[:-1]
-        ]
-        with st.spinner("Thinking..."):
-            response = engine.ask(
-                question=question,
-                result=result,
-                history=history_for_engine
+    with st.form(key="chat_form", clear_on_submit=True):
+        col_in, col_btn = st.columns([5, 1])
+        with col_in:
+            user_input = st.text_input(
+                label="q",
+                placeholder=placeholder,
+                label_visibility="collapsed"
             )
-        st.session_state.chat_history.append({
-            "role": "assistant",
-            "content": response["answer"],
-            "safety_note": response.get("safety_note", "")
-        })
-        # Clear the input field by deleting the key from session state
-        if "chat_input" in st.session_state:
-            del st.session_state["chat_input"]
-        st.experimental_rerun()
+        with col_btn:
+            ask_clicked = st.form_submit_button("Ask", use_container_width=True)
+
+        # Process only when Ask button is clicked
+        if ask_clicked and user_input and user_input.strip():
+            question = user_input.strip()
+            st.session_state.chat_history.append({"role": "user", "content": question})
+            history_for_engine = [
+                {"role": t["role"], "content": t["content"]}
+                for t in st.session_state.chat_history[:-1]
+            ]
+            with st.spinner("Thinking..."):
+                response = engine.ask(
+                    question=question,
+                    result=result,
+                    history=history_for_engine
+                )
+            st.session_state.chat_history.append({
+                "role": "assistant",
+                "content": response["answer"],
+                "safety_note": response.get("safety_note", "")
+            })
+            st.experimental_rerun()
 
 # ─────────────────────────────────────────────────────────────
 # Blocked / Error states
