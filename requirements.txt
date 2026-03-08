@@ -2,3 +2,4 @@ streamlit>=1.23.0,<1.24.0
 boto3>=1.26.0
 python-dotenv>=0.21.0
 requests>=2.31.0
+reportlab>=4.0.0
