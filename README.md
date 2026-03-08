@@ -4,7 +4,7 @@
 
 [![AWS AI for Bharat Hackathon](https://img.shields.io/badge/AWS-AI%20for%20Bharat%20-orange)](https://aws.amazon.com)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-green)](http://54.204.137.70:8501/)
-[![Video Demo](https://img.shields.io/badge/Video-Demo-red)](https://youtu.be/sTgoSQuRjfs)
+[![Video Demo](https://img.shields.io/badge/Video-Demo-red)](https://youtu.be/sx5EVKGb660)
 
 ---
 
@@ -211,7 +211,7 @@ The app will be available at `http://localhost:8501`
 ## 🎥 Demo
 
 **Live Application:** [http://54.204.137.70:8501/](http://54.204.137.70:8501/)  
-**Video Demo:** [https://youtu.be/sTgoSQuRjfs](https://youtu.be/sTgoSQuRjfs)
+**Video Demo:** [https://youtu.be/sx5EVKGb660](https://youtu.be/sx5EVKGb660)
 
 ---
 
