@@ -1,0 +1,56 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Logs
+logs/
+*.log
+*.jsonl
+
+# Cache
+.efci_cache/
+
+# Deployment and conversation docs (not for public repo)
+CONVERSATION_SUMMARY.txt
+DEPLOYMENT_GUIDE.md
+EC2_MANAGEMENT_COMMANDS.txt
+PRODUCTION_READY_SUMMARY.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
